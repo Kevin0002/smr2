@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrega</title>
+</head>
+<body>
+    <fieldset>
+        <legend>ESTRUCTURA TEXTO</legend>
+    <form>
+        <label for="Alumno">Nombre del Alumno</label>
+        <input id="Alumno" type="text" value="Kevin">
+        <p><label for="Nombre">Nombre:</label></p>
+        <p><input style="background-color: aqua;" id="Nombre" type="text"></p>
+        <label for="Descripción">Descripción:</label>
+        <input id="Descripción" style="font-size: 25px;">
+        <p><label for="Password">Password:</label>
+            <input id="Password"></p>
+        <p><label for="Archivos">Archivos:</label>
+            <input id="Archivos" type="file"></p>
+        
+    </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>ESTRUCTURA DE SELLECCIÓN</legend>
+
+    <form>
+        <label for="Desarrollador">Desarrollador</label>
+        <input id="Desarrollador" type="checkbox">
+        <p><label for="Diseñador">Diseñador</label>
+            <input id="Diseñador" type="checkbox"></p>
+        <label for="HTML">HTML</label>
+        <input id="HTML" type="radio">
+        <label for="JS">JS</label>
+        <input id="JS" type="radio">
+    </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>ESTRUCTURA LISTAS</legend>
+    
+        <label for="elementos">Elige un elemento</label><br>
+        <select name="elementos" id="elementos" size="3">
+        <option value="valor1">valor1</option>
+        <option value="valor2">Valor2</option>        
+        <option value="valor3">Valor3</option>
+        </select>
+        <br><br>
+
+        <label for="categorías"></label>
+        <select name="categorías" id="categorías" size="5">
+            <optgroup label="categoría1">
+                <option value="1">Elemento1</option>
+                <option value="2">Elemento2</option>
+            </optgroup>
+            <optgroup label="categoría2">
+                <option value="3">Elemento3</option>
+            </optgroup>
+        </select>
+    </form>
+    </fieldset>
+    
+    <fieldset>
+        <legend>NÚMEROS</legend>
+    <form>
+        <label for="Número">Número</label>
+        <input id="Número" type="number" value="10">
+        <p><label for="Rango">Rango</label>
+        <input id="Rango" type="range" value="80"></p>
+    </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>OTROS</legend>
+    <form>
+        <label for="Color">Color</label>
+        <input id="Color" type="color" value="#00ff00">
+        <p><label for="Fecha">Fecha</label>
+        <input id="Fecha" type="date">
+        <label for="Hora">Hora</label>
+        <input id="Hora" type="time" value="11:00"></p>
+    </form>
+    </fieldset>
+    
+    <fieldset>
+        <legend>ACCIONES</legend>
+    <input type="button" value="Botón">
+    <input type="button" disabled value="Botón Desactivado">
+    <input type="submit">
+    </fieldset>
+    
+    <fieldset>
+        <legend>OPCIONES PROPIAS DE HTML 5</legend>
+    <label for="Número">Número</label>
+    <input id="Número" type="number" value="10">
+    <p><label for="Rango">Rango</label>
+    <input id="Rango" type="range" value="80">10</p>
+    <p><label for="Rango">Rango</label>
+    <input id="Rango" type="range" value="80">10</p>
+    <p><input type="text"></p>
+    <p><input type="range" value="50"></p>
+    </fieldset>
+</body>
+</html>
