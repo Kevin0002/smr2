@@ -1,0 +1,74 @@
+.body-principal {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.ciudades-del-mundo {
+    font-size: 48px;
+    font-weight: 600;
+    color: #334155;
+    text-align: center;
+    animation: fadeInScale 1s ease-out;
+    margin-bottom: 40px;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.contenedor-imagenes {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el enlace (quitar subrayado) */
+.link-ciudad {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al hacer clic */
+.link-ciudad:active {
+    transform: scale(0.98);
+}
+
+.img-ciudad {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.link-ciudad:hover .img-ciudad {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.texto-ciudades {
+    text-align: center;
+    color: black;
+    font-family: 'Arial', sans-serif;
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.link-ciudad:hover .texto-ciudades {
+    color: #667eea;
+}
