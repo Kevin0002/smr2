@@ -66,6 +66,12 @@ print(f"{num:.20f}")
 print("Hola\n" * 3)
 # Imprime la longitud del texto
 # Imprime la primera letra
+nombre = "Kevin"
+print(nombre[0])
+print(len(nombre))
+print(nombre[::-1])
+for i in range (10,15):
+    print(i)
 # Imprime la cuarte letra
 # Imprime la última letra
 # Imprime del principio hasta la 10
@@ -73,3 +79,6 @@ print("Hola\n" * 3)
 # Imprime de la 20 al final
 # Pon todo el texto en mayúsculas. Imprime el resultado
 # 18. Explica para que sirve la función f.string y pon un ejemplo
+
+numeros = 1, 2, 3, 4, 5
+print(f"Números: {numeros}")
