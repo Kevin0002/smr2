@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOQUES QUE NECESITO PARTIR</title>
+</head>
+<body>
+    <!--Como tag de bloque se inicia una fila nueva para cada uno-->
+    <p>Hoy es un día muy especial para mi, estoy en IES VillaVerde en el aula  con alumnos de SRM2, que están aprendiendo muchísimo.<header>Y quiero que se lo reconozcan y que se premien por todos los logros que están consiguiendo. &iexcl;Enhorabuena&excl;</header>
+    </p>
+
+    <p>Hoy es un día muy especial para mi, estoy en IES VillaVerde en el aula  con alumnos de SRM2, que están aprendiendo muchísimo.<p>Y quiero que se lo reconozcan y que se premien por todos los logros que están consiguiendo. &iexcl;Enhorabuena&excl;</p>
+    </p>
+    <!--***********************************************************************************************************************************************-->
+
+    <!-- ¿Puedo necesitar que un TAGs de bloque no ocupe toda la linea?.. La respuesta es SI.-->    
+
+    <!--Propiedad DISPLAY y su impacto en el comportamiento del elemento-->
+    <div  style = "background-color: rgb(245, 24, 153);">Tag de bloque por defecto </div>
+    <hr>
+    <div style ="display: block;background-color: lightblue;">Bloque</div>
+    <div style = "display: inline;background-color: lightgreen;" >En línea</div> <!--Como es en línea no tiene propiedades de espacio-->
+    <div style = "display: inline-block;background-color: lightcoral; width: 150px;height: 150px;margin: 40px;">En línea-bloque</div>   <!--Se comporta como en linea, no ocupando todo el bloque, pero sí nos permite meterla valores de tamaño, como si fuera un bloque-->
+    <hr>
+    <!--Propiedad FLOAT, permite ubicar los elementos drcha/izq y que el resto fluya a su alrededor -->
+    <!--Propiedad FLOAT, no permite alinear en el centro -->
+    <!--Al poner style float, permitimos que tags de bloque se comporten como en linea-->
+    <div style = "float: left; width: 100px;background-color: lightblue;">Flotando a la izquierda</div>
+    <div style = "float: right;width: 100px;background-color: lightgreen;">Flotando a la derecha</div>
+    <p> Esto se coloca en el medio de los bloque es de float</p>
+    <hr>
+ 
+    <!--***********************************************************************************************************************************************-->
+    <!--Atributos del tag de bloque: FLOAT, o DISPLAY: in-line-block-->
+    <h6>FLOAT</h6>
+    <!--DIV puede comportarse en linea, si se define FLOAT  -->
+    <div style="background-color:#FFF4A3;width:33%; float:left;"> <h2>Bloque 1</h2> </div>
+    <div style="background-color:#FFC0C7;width:33%; float:left;"> <h2>Bloque 2</h2> </div>
+    <div style="background-color:#D9EEE1;width:33%; float:left;"> <h2>Bloque 3</h2> </div> 
+
+    <h6>DISPLAY: INLINE-BLOCK</h6>
+    <!--DIV puede comportarse en linea si usamos DISPLAY en Tipo Linea-Bloque (que permite poner anchos) -->
+    <div style="background-color:#FFF4A3;width: 33%; display:inline-block;"> <h2>Bloque 4</h2> </div>
+    <div style="background-color:#FFC0C7;width: 33%;display:inline-block;"> <h2>Bloque 5</h2> </div>
+    <div style="background-color:#D9EEE1;width: 33%;display:inline-block;"> <h2>Bloque 6</h2> </div> 
+    
+    <!--***********************************************************************************************************************************************-->
+    <!--USANDO UN BLOQUE CONTENEDOR: FLOAT, o DISPLAY: in-line-block-->
+    
+    <h6>CONTENEDOR: DISPLAY FLEX</h6>
+    <!--CONTENEDOR - Display FLEX: hacemos que DIV se comporte en linea. -->
+    <!--Comparando con los anteriores, si un bloque es más ancho, el resto se adapta para entrar en la linea. -->
+    <div style="display: flex;">
+        <div style="background-color:#FFF4A3;width:33%;"> <h2>Bloque 7</h2> </div>
+        <div style="background-color:#FFC0C7;width:33%"> <h2>Bloque 8</h2> </div>
+        <div style="background-color:#D9EEE1;width:33%"> <h2>Bloque 9</h2> </div> 
+    </div>   
+
+    <h6>CONTENEDOR: DISPLAY GRID</h6>
+    <!--CONTENEDOR - Display GRID: hacemos que DIV se comporte en linea. -->
+    <div style="display: grid; grid-template-columns: 33% 33% 33%;">
+        <div style="background-color:#FFF4A3;"> <h2>Bloque 10</h2> </div>
+        <div style="background-color:#FFC0C7;"> <h2>Bloque 11</h2> </div>
+        <div style="background-color:#D9EEE1;"> <h2>Bloque 12</h2> </div> 
+    </div>    
+    
+</body>
+</html>

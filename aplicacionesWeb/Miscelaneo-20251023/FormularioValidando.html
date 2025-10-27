@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<h1>Longitud de la circunferencia</h1>
+<h3>Mueve el deslizador para ver cómo cambia la longitud con el radio</h3>
+
+<form oninput="x.value=parseInt(a.value * 2 * 3.1416); z.value=parseInt(a.value)">
+Longitud del radio: 0 <input type="range" id="a" name="a" value="0" min="0" max="100"> 100
+
+<br><br>
+Valor del Radio: <output name="z" for="a"></output>
+<br><br>
+Longitud de la circunferencia: <output name="x" for="a"></output>
+</form>
+
+</body>
+</html>

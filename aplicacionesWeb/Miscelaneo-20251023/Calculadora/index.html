@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Calculadora</title>
+        <script defer src="assets/js/script.js"></script>
+    </head>
+    <body>
+        <!--Botón de cálculo +, -, *, /, raiz cuadrada, %, números del 0-9, limpiar, botón de igual y pantalla-->
+        <main>
+            <section class="calculadora" id="calculadora">
+                <p class="pantalla" id="pantalla">0</p>
+                <div class="botones" id="botones">
+                    <button class="boton" id="limpiar" onclick="limpiarPantalla()">C</button>
+                    <button class="boton" id="raiz" onclick="operacion(5)">√</button>
+                    <button class="boton" id="porcentaje" onclick="operacion(6)">%</button>
+                    <button class="boton" id="suma" onclick="operacion(1)">+</button>
+                    <button class="boton" onclick="recogidaDatos('7')">7</button>
+                    <button class="boton" onclick="recogidaDatos('8')">8</button>
+                    <button class="boton" onclick="recogidaDatos('9')">9</button>
+                    <button class="boton" id="resta" onclick="operacion(2)">-</button>
+                    <button class="boton" onclick="recogidaDatos('4')">4</button>
+                    <button class="boton" onclick="recogidaDatos('5')">5</button>
+                    <button class="boton" onclick="recogidaDatos('6')">6</button>
+                    <button class="boton" id="multi" onclick="operacion(3)">x</button>
+                    <button class="boton" onclick="recogidaDatos('1')">1</button>
+                    <button class="boton" onclick="recogidaDatos('2')">2</button>
+                    <button class="boton" onclick="recogidaDatos('3')">3</button>
+                    <button class="boton" id="division" onclick="operacion(4)">/</button>
+                    <button class="boton" onclick="recogidaDatos('.')">.</button>
+                    <button class="boton" onclick="recogidaDatos('0')">0</button>
+                    <button class="boton" id="igual" onclick="resultado()">=</button>
+                </div>
+                <p id="error"></p>
+            </section>
+        </main>
+    </body>
+</html>

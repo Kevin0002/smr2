@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'digital';
+    src: url('../assets/fonts/DS-DIGII.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'numeros';
+    src: url('../assets/fonts/determination.ttf') format('truetype');
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.calculadora{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 75%;
+    box-sizing: border-box;
+    background-color: rgb(66, 66, 66);
+    padding: 1%;
+    border-radius: 6px;
+}
+
+.pantalla{
+    text-align: right;
+    background-color: rgb(132, 218, 189);
+    height: 6vh;
+    border-radius: 8px;
+    font-size: 5vh;
+    margin: 1.5vh 0ch;
+    padding: 0vh 1ch;
+    font-family: 'digital';
+}
+
+.botones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton{
+    background-color: rgb(114, 114, 114);
+    border: none;
+    border-radius: 8px;
+    width: 24%;
+    margin: 6px 2px;
+    height: 5vh;
+    color: whitesmoke;
+    font-family: 'numeros';
+    font-size: 3vh;
+    transition-duration: 0.5s;
+}
+
+.boton:hover{
+    background-color: rgb(133, 133, 133);
+}
+
+#igual{
+    width: 49%;
+}
+
+#error{
+    font-family: 'numeros';
+    font-size: 2vh;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.botones-desactivados{
+    background-color: rgb(31, 31, 31);
+    border: none;
+    border-radius: 8px;
+    width: 24%;
+    margin: 6px 2px;
+    height: 5vh;
+    color: whitesmoke;
+    font-family: 'numeros';
+    font-size: 3vh;
+    transition-duration: 0.5s;
+}
