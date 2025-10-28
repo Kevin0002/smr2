@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center; background-color: rgba(13, 1, 1, 0.408);">
+    <h1>Elige un color</h1>
+    <a href="/aplicacionesWeb/Web/red.html">
+        <button style="background-color: red;">Rojo</button>
+    </a>
+    <a href="/aplicacionesWeb/Web/verde.html">
+        <button style="background-color: green;">Verde</button>
+    </a>
+    <a href="/aplicacionesWeb/Web/azul.html">
+        <button style="background-color: blue;">Azul</button>
+    </a>
+</body>
+</html>
