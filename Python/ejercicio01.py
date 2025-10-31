@@ -24,8 +24,8 @@
 # num = 1.3
 # print(f"{num:.20f}") # Ejercicio 05
 
-texto = "Hola Mundo que tal estan de locos sapo perro\n"
-print (type("perro" in texto))
+texto = "Hola Mundo que tal\n"
+print (type("tal" in texto))
 
 a = "Hola"
 b = "HOLA"

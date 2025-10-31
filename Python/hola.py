@@ -6,7 +6,7 @@ resultado=a+b # Variable que hace la función de sumar dos variable de tipo ente
 print(resultado)
 
 hola="Hola Mundo" 
-adios="Perras"
+adios="Gente"
 espacio=" "
 resultado02=hola+espacio+adios
 print(resultado02)
