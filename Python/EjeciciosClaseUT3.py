@@ -48,3 +48,37 @@ media = suma / len(lista)
 
 print(f"Suma de la lista: ", suma)
 print(f"Media de la lista: ", media)
+
+
+"""
+4) Crea una tupla con los meses del año, pide números al usuario, si el numero esta entre 1 y la
+longitud máxima de la tupla, muestra el contenido de esa posición sino muestra un mensaje de error.
+El programa termina cuando el usuario introduce un cero. (while)
+"""
+
+meses = ("ERROR", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre")
+
+while True:
+    i = int(input("Introduce un numero de un mes: "))
+    if i in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12):
+        print(meses[i])
+    else:
+        print(meses[0])
+        break
+
+"""
+5) Pide números y mételos en una lista, cuando el usuario meta un 0 ya dejaremos de insertar. Por
+último, muestra los números ordenados de menor a mayor.
+Usa el método sort para ordenar
+"""
+lista = []
+
+while valor != 0:
+    valor = int(input("introduce un valor a la lista: "))
+    lista.append(valor)
+
+print(f"Lista ordenada de menor a mayor: ", lista.sort)
+
+
+
+
