@@ -57,8 +57,8 @@ print("Lista completa: ", lista)
 suma = sum(lista)
 media = suma / len(lista)
 
-print(f"Suma de la lista: ", suma)
-print(f"Media de la lista: ", media)
+print(f"Suma de la lista: {suma}")
+print(f"Media de la lista: {media}")
 
 
 """
