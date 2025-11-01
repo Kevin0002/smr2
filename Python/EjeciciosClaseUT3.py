@@ -122,4 +122,14 @@ while True:
 
 lista.sort(reverse=True)
 
-print(f"Lista ordenara de mayor a menor: {lista}")
+print(f"Lista ordenada de mayor a menor: {lista}")
+
+"""
+7) Pide una cadena por teclado, mete los caracteres en una lista sin espacios.
+"""
+
+cadena = str(input("Ingrece una cadena de texto: "))
+lista = [cadena]
+
+lista.remove(" ")
+print(f"Lista sin espacios: {lista}")
