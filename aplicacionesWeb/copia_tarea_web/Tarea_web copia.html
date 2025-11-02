@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cities</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Georgia, serif;
+        background-color: #f5f5f5;
+      }
+
+      header {
+        background-color: #666;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 15px;
+        padding: 15px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .box {
+        background-color: #d3d3d3;
+        padding: 20px;
+        border-radius: 5px;
+        min-height: 300px;
+      }
+
+      .box-links {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .box-info {
+        grid-column: 2;
+        grid-row: 1;
+        background-color: #e8e8e8;
+      }
+
+      .box-datos {
+        grid-column: 3;
+        grid-row: 1;
+      }
+
+      .box-historia {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .box-curiosidades {
+        grid-column: 2;
+        grid-row: 2;
+        background-color: #e8e8e8;
+      }
+
+      .box-imagen {
+        grid-column: 3;
+        grid-row: 2;
+      }
+
+      .box h2,
+      .box h3 {
+        margin-bottom: 15px;
+      }
+
+      .box ul {
+        list-style: none;
+        padding-left: 20px;
+      }
+
+      .box ul li {
+        margin: 8px 0;
+      }
+
+      .box a {
+        color: #0066cc;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .box a:hover {
+        color: #004499;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        min-height: 250px;
+      }
+
+      footer {
+        background-color: #666;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .iframe-container {
+        width: 100%;
+        height: 100%;
+        min-height: 250px;
+      }
+
+      .initial-message {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: #666;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Cities</h1>
+    </header>
+
+    <div class="container">
+      <div class="box box-links">
+        <h3>Selecciona una ciudad:</h3>
+        <ul>
+          <li><a onclick="loadCity('london')">London</a></li>
+          <li><a onclick="loadCity('paris')">Paris</a></li>
+          <li><a onclick="loadCity('tokyo')">Tokyo</a></li>
+          <li><a onclick="loadCity('newyork')">New York</a></li>
+          <li><a onclick="loadCity('dubai')">Dubai</a></li>
+          <li><a onclick="loadCity('sydney')">Sydney</a></li>
+        </ul>
+      </div>
+
+      <div class="box box-info">
+        <div id="info-general" class="iframe-container">
+          <div class="initial-message">Selecciona una ciudad</div>
+        </div>
+      </div>
+
+      <div class="box box-datos">
+        <div id="datos-estadisticas" class="iframe-container">
+          <div class="initial-message">Datos y estadísticas</div>
+        </div>
+      </div>
+
+      <div class="box box-historia">
+        <div id="historia" class="iframe-container">
+          <div class="initial-message">Historia</div>
+        </div>
+      </div>
+
+      <div class="box box-curiosidades">
+        <div id="curiosidades" class="iframe-container">
+          <div class="initial-message">Curiosidades</div>
+        </div>
+      </div>
+
+      <div class="box box-imagen">
+        <div id="imagen-lugares" class="iframe-container">
+          <div class="initial-message">Lugares turísticos</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Footer - Dashboard de Ciudades del Mundo</p>
+    </footer>
+
+    <script>
+      function loadCity(city) {
+        if (city === "london") {
+          document.getElementById("info-general").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h2{color:#2c3e50;margin-bottom:10px}p{line-height:1.6;margin-bottom:10px}.highlight{color:#e74c3c;font-weight:bold}</style></head><body><h2>🇬🇧 LONDON</h2><p><strong>Capital de:</strong> Reino Unido e Inglaterra</p><p><strong>Fundación:</strong> 43 d.C. (Londinium)</p><p><strong>Idioma:</strong> Inglés</p><p><strong>Moneda:</strong> Libra esterlina (£)</p><p class='highlight'>Una de las ciudades más influyentes del mundo</p><p><strong>Clima:</strong> Templado oceánico</p></body></html>\"></iframe>";
+
+          document.getElementById("datos-estadisticas").innerHTML =
+            '<iframe srcdoc="<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:15px}table{width:100%;border-collapse:collapse;margin-top:10px}th,td{border:1px solid #666;padding:8px;text-align:left}th{background-color:#34495e;color:white}tr:nth-child(even){background-color:#ecf0f1}</style></head><body><h3>📊 Datos</h3><table><tr><th>Categoría</th><th>Dato</th></tr><tr><td>Población</td><td>9.0 millones</td></tr><tr><td>Superficie</td><td>1,572 km²</td></tr><tr><td>PIB</td><td>£534 mil millones</td></tr><tr><td>Turistas/año</td><td>30+ millones</td></tr><tr><td>Aeropuertos</td><td>6 principales</td></tr><tr><td>Universidades</td><td>40+</td></tr></table></body></html>"></iframe>';
+
+          document.getElementById("historia").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}.period{margin-bottom:12px;padding:10px;background:#ecf0f1;border-left:4px solid #3498db}.period strong{color:#2c3e50}</style></head><body><h3>📜 Historia</h3><div class='period'><strong>43 d.C.:</strong> Los romanos fundan Londinium.</div><div class='period'><strong>1066:</strong> Guillermo el Conquistador es coronado. Londres capital de Inglaterra.</div><div class='period'><strong>1666:</strong> El Gran Incendio destruye la ciudad medieval.</div><div class='period'><strong>Siglo XIX:</strong> Se convierte en la ciudad más grande del mundo.</div><div class='period'><strong>1940-41:</strong> El Blitz Nazi bombardea Londres.</div><div class='period'><strong>2012:</strong> Juegos Olímpicos por tercera vez.</div></body></html>\"></iframe>";
+
+          document.getElementById("curiosidades").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}.section{margin-bottom:15px}ul{padding-left:20px}li{margin-bottom:6px;line-height:1.5}</style></head><body><div class='section'><h3>🎭 Curiosidades</h3><ul><li>El metro es el más antiguo del mundo (1863)</li><li>Big Ben es el nombre de la campana, no la torre</li><li>Más de 170 museos</li><li>300+ idiomas hablados</li></ul></div><div class='section'><h3>🍽️ Gastronomía</h3><ul><li><strong>Fish and Chips</strong></li><li><strong>Sunday Roast</strong></li><li><strong>Full English Breakfast</strong></li><li><strong>Afternoon Tea</strong></li><li><strong>Tikka Masala</strong></li></ul></div></body></html>\"></iframe>";
+
+          document.getElementById("imagen-lugares").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}img{width:100%;height:auto;border-radius:8px;margin-bottom:10px}ul{padding-left:20px}li{margin-bottom:5px}</style></head><body><img src='https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800' alt='London'><h3>🏛️ Lugares</h3><ul><li>Big Ben</li><li>Torre de Londres</li><li>Buckingham Palace</li><li>London Eye</li><li>British Museum</li><li>Tower Bridge</li><li>Hyde Park</li></ul></body></html>\"></iframe>";
+        } else if (city === "paris") {
+          document.getElementById("info-general").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h2{color:#2c3e50;margin-bottom:10px}p{line-height:1.6;margin-bottom:10px}.highlight{color:#e74c3c;font-weight:bold}</style></head><body><h2>🇫🇷 PARIS</h2><p><strong>Capital de:</strong> Francia</p><p><strong>Fundación:</strong> Siglo III a.C. (Lutetia)</p><p><strong>Idioma:</strong> Francés</p><p><strong>Moneda:</strong> Euro (€)</p><p class='highlight'>La Ciudad de la Luz y Capital de la Moda</p><p><strong>Clima:</strong> Oceánico</p></body></html>\"></iframe>";
+
+          document.getElementById("datos-estadisticas").innerHTML =
+            '<iframe srcdoc="<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:15px}table{width:100%;border-collapse:collapse;margin-top:10px}th,td{border:1px solid #666;padding:8px;text-align:left}th{background-color:#2c3e50;color:white}tr:nth-child(even){background-color:#ecf0f1}</style></head><body><h3>📊 Datos</h3><table><tr><th>Categoría</th><th>Dato</th></tr><tr><td>Población</td><td>2.1 millones</td></tr><tr><td>Superficie</td><td>105 km²</td></tr><tr><td>Densidad</td><td>20,000 hab/km²</td></tr><tr><td>PIB</td><td>€740 mil millones</td></tr><tr><td>Turistas/año</td><td>38+ millones</td></tr><tr><td>Museos</td><td>130+</td></tr></table></body></html>"></iframe>';
+
+          document.getElementById("historia").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}.period{margin-bottom:12px;padding:10px;background:#ecf0f1;border-left:4px solid #e74c3c}.period strong{color:#2c3e50}</style></head><body><h3>📜 Historia</h3><div class='period'><strong>250 a.C.:</strong> Los parisios fundan la ciudad.</div><div class='period'><strong>508:</strong> Capital del Reino Franco.</div><div class='period'><strong>1163:</strong> Construcción de Notre-Dame.</div><div class='period'><strong>1789:</strong> Revolución Francesa.</div><div class='period'><strong>1889:</strong> Se construye la Torre Eiffel.</div><div class='period'><strong>1944:</strong> Liberación de París.</div></body></html>\"></iframe>";
+
+          document.getElementById("curiosidades").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}.section{margin-bottom:15px}ul{padding-left:20px}li{margin-bottom:6px;line-height:1.5}</style></head><body><div class='section'><h3>🎨 Curiosidades</h3><ul><li>6,000 calles, solo una Rue de Paris</li><li>El Louvre es el museo más visitado</li><li>Solo una señal de STOP en toda la ciudad</li><li>La Torre Eiffel crece 15 cm en verano</li></ul></div><div class='section'><h3>🥐 Gastronomía</h3><ul><li><strong>Croissant</strong></li><li><strong>Baguette</strong></li><li><strong>Crêpes</strong></li><li><strong>Escargots</strong></li><li><strong>Macarons</strong></li><li><strong>Quesos variados</strong></li></ul></div></body></html>\"></iframe>";
+
+          document.getElementById("imagen-lugares").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}img{width:100%;height:auto;border-radius:8px;margin-bottom:10px}ul{padding-left:20px}li{margin-bottom:5px}</style></head><body><img src='https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800' alt='Paris'><h3>🗼 Lugares</h3><ul><li>Torre Eiffel</li><li>Museo del Louvre</li><li>Notre-Dame</li><li>Arco del Triunfo</li><li>Sacré-Cœur</li><li>Versalles</li></ul></body></html>\"></iframe>";
+        } else if (city === "tokyo") {
+          document.getElementById("info-general").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h2{color:#2c3e50;margin-bottom:10px}p{line-height:1.6;margin-bottom:10px}.highlight{color:#e74c3c;font-weight:bold}</style></head><body><h2>🇯🇵 TOKYO</h2><p><strong>Capital de:</strong> Japón</p><p><strong>Fundación:</strong> 1457 (Edo)</p><p><strong>Idioma:</strong> Japonés</p><p><strong>Moneda:</strong> Yen (¥)</p><p class='highlight'>La metrópoli más grande del mundo</p><p><strong>Clima:</strong> Subtropical húmedo</p></body></html>\"></iframe>";
+
+          document.getElementById("datos-estadisticas").innerHTML =
+            '<iframe srcdoc="<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:15px}table{width:100%;border-collapse:collapse;margin-top:10px}th,td{border:1px solid #666;padding:8px;text-align:left}th{background-color:#c0392b;color:white}tr:nth-child(even){background-color:#ecf0f1}</style></head><body><h3>📊 Datos</h3><table><tr><th>Categoría</th><th>Dato</th></tr><tr><td>Población</td><td>13.9 millones</td></tr><tr><td>Superficie</td><td>2,194 km²</td></tr><tr><td>PIB</td><td>$1 trillón USD</td></tr><tr><td>Turistas/año</td><td>15+ millones</td></tr><tr><td>Estaciones metro</td><td>282</td></tr><tr><td>Restaurantes Michelin</td><td>200+</td></tr></table></body></html>"></iframe>';
+
+          document.getElementById("historia").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}.period{margin-bottom:12px;padding:10px;background:#ecf0f1;border-left:4px solid #c0392b}.period strong{color:#2c3e50}</style></head><body><h3>📜 Historia</h3><div class='period'><strong>1457:</strong> Se construye el Castillo Edo.</div><div class='period'><strong>1603:</strong> Edo capital del shogunato Tokugawa.</div><div class='period'><strong>1868:</strong> Renombrada Tokio, capital de Japón.</div><div class='period'><strong>1923:</strong> Gran Terremoto de Kantō.</div><div class='period'><strong>1945:</strong> Bombardeos de la Segunda Guerra Mundial.</div><div class='period'><strong>1964:</strong> Primeros Juegos Olímpicos asiáticos.</div></body></html>\"></iframe>";
+
+          document.getElementById("curiosidades").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}.section{margin-bottom:15px}ul{padding-left:20px}li{margin-bottom:6px;line-height:1.5}</style></head><body><div class='section'><h3>🎌 Curiosidades</h3><ul><li>El sistema de metro más puntual del mundo</li><li>Más de 100,000 restaurantes</li><li>El cruce de Shibuya es el más transitado</li><li>13 líneas de metro privadas</li></ul></div><div class='section'><h3>🍱 Gastronomía</h3><ul><li><strong>Sushi</strong></li><li><strong>Ramen</strong></li><li><strong>Tempura</strong></li><li><strong>Yakitori</strong></li><li><strong>Okonomiyaki</strong></li><li><strong>Matcha</strong></li></ul></div></body></html>\"></iframe>";
+
+          document.getElementById("imagen-lugares").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}img{width:100%;height:auto;border-radius:8px;margin-bottom:10px}ul{padding-left:20px}li{margin-bottom:5px}</style></head><body><img src='https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800' alt='Tokyo'><h3>⛩️ Lugares</h3><ul><li>Torre de Tokio</li><li>Templo Senso-ji</li><li>Shibuya Crossing</li><li>Monte Fuji</li><li>Palacio Imperial</li><li>Akihabara</li></ul></body></html>\"></iframe>";
+        } else if (city === "newyork") {
+          document.getElementById("info-general").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h2{color:#2c3e50;margin-bottom:10px}p{line-height:1.6;margin-bottom:10px}.highlight{color:#e74c3c;font-weight:bold}</style></head><body><h2>🇺🇸 NEW YORK</h2><p><strong>Ciudad de:</strong> Estados Unidos (Nueva York)</p><p><strong>Fundación:</strong> 1624 (Nueva Ámsterdam)</p><p><strong>Idioma:</strong> Inglés</p><p><strong>Moneda:</strong> Dólar ($)</p><p class='highlight'>La capital del mundo, centro financiero y cultural global</p><p><strong>Clima:</strong> Continental húmedo</p></body></html>\"></iframe>";
+
+          document.getElementById("datos-estadisticas").innerHTML =
+            '<iframe srcdoc="<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:15px}table{width:100%;border-collapse:collapse;margin-top:10px}th,td{border:1px solid #666;padding:8px;text-align:left}th{background-color:#1a5490;color:white}tr:nth-child(even){background-color:#ecf0f1}</style></head><body><h3>📊 Datos</h3><table><tr><th>Categoría</th><th>Dato</th></tr><tr><td>Población</td><td>8.3 millones (área metro: 20M)</td></tr><tr><td>Superficie</td><td>783 km²</td></tr><tr><td>PIB</td><td>$1.7 trillones</td></tr><tr><td>Turistas/año</td><td>60+ millones</td></tr><tr><td>Rascacielos</td><td>6,000+</td></tr><tr><td>Distritos</td><td>5 (boroughs)</td></tr></table></body></html>"></iframe>';
+
+          document.getElementById("historia").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}.period{margin-bottom:12px;padding:10px;background:#ecf0f1;border-left:4px solid #1a5490}.period strong{color:#2c3e50}</style></head><body><h3>📜 Historia</h3><div class='period'><strong>1624:</strong> Fundada como Nueva Ámsterdam por holandeses.</div><div class='period'><strong>1664:</strong> Inglaterra la conquista y renombra Nueva York.</div><div class='period'><strong>1789:</strong> George Washington es investido como presidente en NY.</div><div class='period'><strong>1886:</strong> Inauguración de la Estatua de la Libertad.</div><div class='period'><strong>2001:</strong> Ataques del 11 de septiembre a las Torres Gemelas.</div><div class='period'><strong>2021:</strong> NYC recupera su dinamismo post-pandemia.</div></body></html>\"></iframe>";
+
+          document.getElementById("curiosidades").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}.section{margin-bottom:15px}ul{padding-left:20px}li{margin-bottom:6px;line-height:1.5}</style></head><body><div class='section'><h3>🗽 Curiosidades</h3><ul><li>800 idiomas hablados</li><li>Central Park más grande que Mónaco</li><li>Primera pizzería de EEUU (1905)</li><li>Sistema de metro de 24 horas</li></ul></div><div class='section'><h3>🍕 Gastronomía</h3><ul><li><strong>New York Pizza</strong></li><li><strong>Bagels</strong></li><li><strong>Hot Dogs</strong></li><li><strong>Cheesecake</strong></li><li><strong>Pastrami Sandwich</strong></li></ul></div></body></html>\"></iframe>";
+
+          document.getElementById("imagen-lugares").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}img{width:100%;height:auto;border-radius:8px;margin-bottom:10px}ul{padding-left:20px}li{margin-bottom:5px}</style></head><body><img src='https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800' alt='New York'><h3>🏙️ Lugares</h3><ul><li>Estatua de la Libertad</li><li>Times Square</li><li>Central Park</li><li>Empire State Building</li><li>Brooklyn Bridge</li><li>Metropolitan Museum</li></ul></body></html>\"></iframe>";
+        } else if (city === "dubai") {
+          document.getElementById("info-general").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h2{color:#2c3e50;margin-bottom:10px}p{line-height:1.6;margin-bottom:10px}.highlight{color:#e74c3c;font-weight:bold}</style></head><body><h2>🇦🇪 DUBAI</h2><p><strong>Ciudad de:</strong> Emiratos Árabes Unidos</p><p><strong>Fundación:</strong> 1833</p><p><strong>Idioma:</strong> Árabe (Inglés ampliamente usado)</p><p><strong>Moneda:</strong> Dirham (AED)</p><p class='highlight'>La ciudad del lujo y la innovación arquitectónica</p><p><strong>Clima:</strong> Desértico subtropical</p></body></html>\"></iframe>";
+
+          document.getElementById("datos-estadisticas").innerHTML =
+            '<iframe srcdoc="<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:15px}table{width:100%;border-collapse:collapse;margin-top:10px}th,td{border:1px solid #666;padding:8px;text-align:left}th{background-color:#c89b3c;color:white}tr:nth-child(even){background-color:#ecf0f1}</style></head><body><h3>📊 Datos</h3><table><tr><th>Categoría</th><th>Dato</th></tr><tr><td>Población</td><td>3.6 millones</td></tr><tr><td>Superficie</td><td>4,114 km²</td></tr><tr><td>PIB</td><td>$102 mil millones</td></tr><tr><td>Turistas/año</td><td>16+ millones</td></tr><tr><td>Edificio más alto</td><td>Burj Khalifa (828m)</td></tr><tr><td>Expatriados</td><td>85% de la población</td></tr></table></body></html>"></iframe>';
+
+          document.getElementById("historia").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}.period{margin-bottom:12px;padding:10px;background:#ecf0f1;border-left:4px solid #c89b3c}.period strong{color:#2c3e50}</style></head><body><h3>📜 Historia</h3><div class='period'><strong>1833:</strong> Familia Al Maktoum establece Dubai.</div><div class='period'><strong>1966:</strong> Descubrimiento de petróleo.</div><div class='period'><strong>1971:</strong> Independencia y fundación de los EAU.</div><div class='period'><strong>1985:</strong> Fundación de Emirates Airlines.</div><div class='period'><strong>2010:</strong> Inauguración del Burj Khalifa, edificio más alto del mundo.</div><div class='period'><strong>2020:</strong> Expo 2020 Dubai (celebrada en 2021-2022).</div></body></html>\"></iframe>";
+
+          document.getElementById("curiosidades").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}.section{margin-bottom:15px}ul{padding-left:20px}li{margin-bottom:6px;line-height:1.5}</style></head><body><div class='section'><h3>✨ Curiosidades</h3><ul><li>No hay impuesto sobre la renta</li><li>Policía usa superdeportivos (Lamborghini, Ferrari)</li><li>El mall más grande del mundo (Dubai Mall)</li><li>Islas artificiales en forma de palmera</li></ul></div><div class='section'><h3>🍴 Gastronomía</h3><ul><li><strong>Shawarma</strong></li><li><strong>Hummus</strong></li><li><strong>Falafel</strong></li><li><strong>Machboos</strong></li><li><strong>Kunafa</strong></li><li><strong>Dátiles</strong></li></ul></div></body></html>\"></iframe>";
+
+          document.getElementById("imagen-lugares").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}img{width:100%;height:auto;border-radius:8px;margin-bottom:10px}ul{padding-left:20px}li{margin-bottom:5px}</style></head><body><img src='https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800' alt='Dubai'><h3>🏗️ Lugares</h3><ul><li>Burj Khalifa</li><li>Palm Jumeirah</li><li>Burj Al Arab</li><li>Dubai Mall</li><li>Dubai Marina</li><li>Gold Souk</li></ul></body></html>\"></iframe>";
+        } else if (city === "sydney") {
+          document.getElementById("info-general").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h2{color:#2c3e50;margin-bottom:10px}p{line-height:1.6;margin-bottom:10px}.highlight{color:#e74c3c;font-weight:bold}</style></head><body><h2>🇦🇺 SYDNEY</h2><p><strong>Ciudad de:</strong> Australia (Nueva Gales del Sur)</p><p><strong>Fundación:</strong> 1788</p><p><strong>Idioma:</strong> Inglés</p><p><strong>Moneda:</strong> Dólar australiano ($)</p><p class='highlight'>La ciudad más icónica de Australia y puerta de Oceanía</p><p><strong>Clima:</strong> Subtropical oceánico</p></body></html>\"></iframe>";
+
+          document.getElementById("datos-estadisticas").innerHTML =
+            '<iframe srcdoc="<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:15px}table{width:100%;border-collapse:collapse;margin-top:10px}th,td{border:1px solid #666;padding:8px;text-align:left}th{background-color:#006847;color:white}tr:nth-child(even){background-color:#ecf0f1}</style></head><body><h3>📊 Datos</h3><table><tr><th>Categoría</th><th>Dato</th></tr><tr><td>Población</td><td>5.3 millones</td></tr><tr><td>Superficie</td><td>12,368 km²</td></tr><tr><td>PIB</td><td>$337 mil millones</td></tr><tr><td>Turistas/año</td><td>15+ millones</td></tr><tr><td>Playas</td><td>100+</td></tr><tr><td>Parques nacionales</td><td>7 cercanos</td></tr></table></body></html>"></iframe>';
+
+          document.getElementById("historia").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}.period{margin-bottom:12px;padding:10px;background:#ecf0f1;border-left:4px solid #006847}.period strong{color:#2c3e50}</style></head><body><h3>📜 Historia</h3><div class='period'><strong>50,000+ años:</strong> Pueblo Eora habita la región.</div><div class='period'><strong>1788:</strong> Primera colonia británica en Australia.</div><div class='period'><strong>1932:</strong> Inauguración del Sydney Harbour Bridge.</div><div class='period'><strong>1973:</strong> Apertura de la Opera House.</div><div class='period'><strong>2000:</strong> Juegos Olímpicos de Sydney.</div><div class='period'><strong>2019-20:</strong> Incendios forestales amenazan la región.</div></body></html>\"></iframe>";
+
+          document.getElementById("curiosidades").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}.section{margin-bottom:15px}ul{padding-left:20px}li{margin-bottom:6px;line-height:1.5}</style></head><body><div class='section'><h3>🦘 Curiosidades</h3><ul><li>Primer asentamiento europeo en Australia</li><li>El puente Harbour Bridge tiene 6 millones de remaches</li><li>Bondi Beach es una de las playas más famosas del mundo</li><li>Sydney tiene más de 340 días de sol al año</li></ul></div><div class='section'><h3>🥧 Gastronomía</h3><ul><li><strong>Meat Pie</strong></li><li><strong>Fish and Chips</strong></li><li><strong>Pavlova</strong></li><li><strong>Vegemite</strong></li><li><strong>Barramundi</strong></li><li><strong>Tim Tams</strong></li></ul></div></body></html>\"></iframe>";
+
+          document.getElementById("imagen-lugares").innerHTML =
+            "<iframe srcdoc=\"<html><head><style>body{font-family:Georgia,serif;padding:15px;margin:0}h3{color:#2c3e50;margin-bottom:10px}img{width:100%;height:auto;border-radius:8px;margin-bottom:10px}ul{padding-left:20px}li{margin-bottom:5px}</style></head><body><img src='https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800' alt='Sydney'><h3>🌊 Lugares</h3><ul><li>Opera House</li><li>Harbour Bridge</li><li>Bondi Beach</li><li>Taronga Zoo</li><li>Darling Harbour</li><li>Blue Mountains</li></ul></body></html>\"></iframe>";
+        }
+      }
+    </script>
+  </body>
+</html>

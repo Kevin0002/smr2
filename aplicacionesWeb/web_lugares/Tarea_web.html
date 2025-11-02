@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cities</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Cities</h1>
+    </header>
+
+    <div class="container">
+      <div class="box box-links">
+        <h3>Selecciona una ciudad:</h3>
+        <ul>
+          <li><a onclick="loadCity('london')">London</a></li>
+          <li><a onclick="loadCity('paris')">Paris</a></li>
+          <li><a onclick="loadCity('tokyo')">Tokyo</a></li>
+          <li><a onclick="loadCity('newyork')">New York</a></li>
+          <li><a onclick="loadCity('dubai')">Dubai</a></li>
+          <li><a onclick="loadCity('sydney')">Sydney</a></li>
+        </ul>
+      </div>
+
+      <div class="box box-info" id="info-general">Selecciona una ciudad</div>
+
+      <div class="box box-datos" id="datos-estadisticas">
+        <div class="initial-message">Datos y estadísticas</div>
+      </div>
+
+      <div class="box box-historia" id="historia">
+        <div class="initial-message">Historia</div>
+      </div>
+
+      <div class="box box-curiosidades" id="curiosidades">
+        <div class="initial-message">Curiosidades</div>
+      </div>
+
+      <div class="box box-imagen" id="imagen-lugares">
+        <div class="initial-message">Lugares turísticos</div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Footer - Dashboard de Ciudades del Mundo</p>
+    </footer>
+
+    <script>
+      function loadCity(city) {
+        document.getElementById("info-general").innerHTML =
+          `<iframe src="cities/${city}/info.html"></iframe>`;
+        document.getElementById("datos-estadisticas").innerHTML =
+          `<iframe src="cities/${city}/datos.html"></iframe>`;
+        document.getElementById("historia").innerHTML =
+          `<iframe src="cities/${city}/historia.html"></iframe>`;
+        document.getElementById("curiosidades").innerHTML =
+          `<iframe src="cities/${city}/curiosidades.html"></iframe>`;
+        document.getElementById("imagen-lugares").innerHTML =
+          `<iframe src="cities/${city}/lugares.html"></iframe>`;
+      }
+    </script>
+  </body>
+</html>

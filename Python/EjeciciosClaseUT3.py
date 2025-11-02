@@ -133,3 +133,5 @@ lista = [cadena]
 
 lista.remove(" ")
 print(f"Lista sin espacios: {lista}")
+
+print("Programa finalizado.")
