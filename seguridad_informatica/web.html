@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Normativas y Seguridad Informática</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #0078d7;
+        --primary-dark: #005a9e;
+        --lssi-color: #00a8e8;
+        --lpi-color: #7b68ee;
+        --magerit-color: #ff6b6b;
+        --text-primary: #333;
+        --text-secondary: #555;
+        --bg-light: #f5f7fa;
+        --bg-card: #ffffff;
+        --border-radius: 12px;
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.07);
+        --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background: var(--bg-light);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        color: white;
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+        box-shadow: var(--shadow-md);
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+        font-weight: 700;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      .subtitle {
+        font-size: 1.1em;
+        opacity: 0.9;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .intro {
+        background: var(--bg-card);
+        padding: 25px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-sm);
+        margin-bottom: 30px;
+        border-left: 5px solid var(--primary-color);
+      }
+
+      .intro h2 {
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        font-size: 1.5em;
+      }
+
+      .intro p {
+        color: var(--text-secondary);
+        font-size: 1em;
+      }
+
+      .sections {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 30px;
+      }
+
+      .card {
+        background: var(--bg-card);
+        border-radius: var(--border-radius);
+        padding: 25px;
+        box-shadow: var(--shadow-sm);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        border-top: 4px solid;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .card.rgpd { border-top-color: var(--primary-color); }
+      .card.lssi { border-top-color: var(--lssi-color); }
+      .card.lpi { border-top-color: var(--lpi-color); }
+      .card.magerit { border-top-color: var(--magerit-color); }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+
+      .card-icon {
+        font-size: 2.8em;
+        flex-shrink: 0;
+      }
+
+      .card.rgpd .card-icon { color: var(--primary-color); }
+      .card.lssi .card-icon { color: var(--lssi-color); }
+      .card.lpi .card-icon { color: var(--lpi-color); }
+      .card.magerit .card-icon { color: var(--magerit-color); }
+
+      .card h3 {
+        font-size: 1.3em;
+        line-height: 1.3;
+        margin: 0;
+      }
+
+      .card-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out, margin-top 0.5s ease-in-out, padding-top 0.5s ease-in-out;
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+      .card-content.active {
+        max-height: 3000px; /* Sufficiently large value */
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #e0e0e0;
+      }
+
+      .card-content h4 {
+        color: var(--primary-color);
+        margin: 15px 0 10px 0;
+        font-size: 1.1em;
+      }
+      .card-content h4:first-child { margin-top: 0; }
+
+      .card-content p {
+        color: var(--text-secondary);
+        margin-bottom: 10px;
+        font-size: 0.95em;
+      }
+
+      .card-content ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 12px;
+      }
+
+      .card-content li {
+        padding: 6px 0 6px 22px;
+        position: relative;
+        color: var(--text-secondary);
+        font-size: 0.95em;
+      }
+
+      .card-content li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+        font-weight: bold;
+        font-size: 1.2em;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .card-content strong { color: var(--text-primary); }
+
+      .card-content ol {
+        padding-left: 25px;
+        margin-bottom: 12px;
+      }
+      .card-content ol li { padding-left: 5px; }
+      .card-content ol li::before { content: none; }
+
+      .highlight-box {
+        background: #eef7ff;
+        border-left: 4px solid var(--primary-color);
+        padding: 12px 15px;
+        margin: 15px 0;
+        border-radius: 6px;
+        font-size: 0.95em;
+      }
+      .highlight-box p { margin: 0; }
+
+      .card .toggle-btn {
+        display: inline-block;
+        margin-top: auto; /* Pushes button to the bottom */
+        padding: 10px 22px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.9em;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        font-weight: 500;
+        align-self: flex-start; /* Align to the start of the flex container */
+      }
+
+      .card .toggle-btn:hover {
+        background-color: var(--primary-dark);
+        transform: scale(1.05);
+      }
+
+      .card.lssi .toggle-btn { background-color: var(--lssi-color); }
+      .card.lssi .toggle-btn:hover { background-color: #0086b8; }
+      .card.lpi .toggle-btn { background-color: var(--lpi-color); }
+      .card.lpi .toggle-btn:hover { background-color: #6452c8; }
+      .card.magerit .toggle-btn { background-color: var(--magerit-color); }
+      .card.magerit .toggle-btn:hover { background-color: #e65555; }
+
+      .summary {
+        font-size: 1em;
+        color: #666;
+        line-height: 1.5;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        flex-grow: 1; /* Allows summary to take available space */
+      }
+
+      footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+        margin-top: 30px;
+      }
+
+      footer p {
+        margin: 5px 0;
+        font-size: 0.95em;
+        opacity: 0.9;
+      }
+
+      /* --- Responsive Design --- */
+
+      @media (max-width: 992px) {
+        .sections {
+          grid-template-columns: 1fr;
+        }
+        h1 { font-size: 2.2em; }
+        .subtitle { font-size: 1em; }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          line-height: 1.5;
+        }
+        h1 { font-size: 1.8em; }
+        .container { padding: 15px; }
+        header { padding: 30px 15px; }
+        .card { padding: 20px; }
+        .card-header { flex-direction: column; align-items: flex-start; }
+      }
+
+      @media (max-width: 480px) {
+        h1 { font-size: 1.6em; }
+        .subtitle { font-size: 0.9em; }
+        .intro, .card { padding: 15px; }
+        .card-icon { font-size: 2.2em; }
+        .card h3 { font-size: 1.2em; }
+        .toggle-btn { width: 100%; text-align: center; }
+      }
+
+      @media print {
+        body { background: white; }
+        header, footer, .toggle-btn { display: none; }
+        .card {
+          box-shadow: none;
+          border: 1px solid #ccc;
+          page-break-inside: avoid;
+        }
+        .card-content { max-height: none !important; }
+        .container { padding: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Normativas y Seguridad Informática</h1>
+        <p class="subtitle">
+          Análisis de las principales normativas y metodologías de gestión de
+          riesgos en el ámbito digital.
+        </p>
+      </div>
+    </header>
+
+    <div class="container">
+      <section class="intro">
+        <h2>Marco Normativo Digital</h2>
+        <p>
+          Este documento presenta las normativas clave que rigen la actividad
+          digital, el tratamiento de información y la protección de datos,
+          junto con metodologías de gestión de riesgos para garantizar la
+          seguridad de los sistemas.
+        </p>
+      </section>
+
+      <div class="sections">
+        <!-- RGPD Card -->
+        <div class="card rgpd">
+          <div class="card-header">
+            <span class="card-icon">🔒</span>
+            <div>
+              <h3>RGPD y LOPDGDD</h3>
+              <p class="summary">
+                Marco normativo para la protección de datos personales y
+                garantía de derechos digitales.
+              </p>
+            </div>
+          </div>
+          <button class="toggle-btn" onclick="toggleContent(this)">
+            Ver más
+          </button>
+          <div class="card-content">
+            <h4>Fundamento Legal</h4>
+            <ul>
+              <li>
+                <strong>RGPD (UE 2016/679):</strong> Norma europea de aplicación
+                directa.
+              </li>
+              <li>
+                <strong>LOPDGDD (Ley 3/2018):</strong> Adaptación al
+                ordenamiento jurídico español.
+              </li>
+              <li>
+                <strong>Aplicabilidad:</strong> Cualquier organización que trate
+                datos de personas en la UE.
+              </li>
+            </ul>
+
+            <h4>Principio de Responsabilidad Proactiva</h4>
+            <p>
+              Las organizaciones deben demostrar el cumplimiento normativo de
+              forma activa.
+            </p>
+            <ul>
+              <li><strong>Base de Legitimación:</strong> Consentimiento, contrato, etc.</li>
+              <li><strong>Transparencia:</strong> Información clara y concisa.</li>
+              <li><strong>RAT:</strong> Registro de Actividades de Tratamiento.</li>
+              <li><strong>EIPD:</strong> Evaluación de Impacto para alto riesgo.</li>
+              <li><strong>Medidas de Seguridad:</strong> Cifrado, seudonimización.</li>
+              <li><strong>Notificación de Brechas:</strong> A la AEPD en 72h.</li>
+              <li><strong>DPD/DPO:</strong> Delegado de Protección de Datos.</li>
+            </ul>
+
+            <div class="highlight-box">
+              <p>
+                <strong>Enfoque Basado en Riesgos:</strong> Las medidas de
+                seguridad deben ser proporcionales al riesgo evaluado.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LSSI-CE Card -->
+        <div class="card lssi">
+          <div class="card-header">
+            <span class="card-icon">🌐</span>
+            <div>
+              <h3>LSSI-CE</h3>
+              <p class="summary">
+                Ley que regula los servicios online y el comercio electrónico
+                en España.
+              </p>
+            </div>
+          </div>
+          <button class="toggle-btn" onclick="toggleContent(this)">
+            Ver más
+          </button>
+          <div class="card-content">
+            <h4>Ámbito de Aplicación</h4>
+            <p>
+              Prestadores de servicios establecidos en España o que dirijan sus
+              servicios al territorio español.
+            </p>
+            <ul>
+              <li>Tiendas online (e-commerce)</li>
+              <li>Webs corporativas con actividad económica</li>
+              <li>Servicios de intermediación (hosting, etc.)</li>
+              <li>Email marketing</li>
+            </ul>
+
+            <h4>Obligaciones Principales</h4>
+            <ul>
+              <li><strong>Aviso Legal:</strong> Información del titular.</li>
+              <li>
+                <strong>Comunicaciones Comerciales:</strong> Consentimiento
+                previo (opt-in).
+              </li>
+              <li><strong>Contratación Electrónica:</strong> Información clara.</li>
+              <li><strong>Política de Cookies:</strong> Consentimiento informado.</li>
+            </ul>
+
+            <div class="highlight-box">
+              <p>
+                <strong>Importante:</strong> Prohibido el envío de spam sin
+                consentimiento, salvo relación contractual previa.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LPI Card -->
+        <div class="card lpi">
+          <div class="card-header">
+            <span class="card-icon">©️</span>
+            <div>
+              <h3>Ley de Propiedad Intelectual</h3>
+              <p class="summary">
+                Protege los derechos de autores y creadores sobre sus obras
+                originales.
+              </p>
+            </div>
+          </div>
+          <button class="toggle-btn" onclick="toggleContent(this)">
+            Ver más
+          </button>
+          <div class="card-content">
+            <h4>Objeto y Propósito</h4>
+            <p>
+              Protección de obras literarias, artísticas y científicas.
+            </p>
+            <ul>
+              <li>
+                <strong>Derechos Morales:</strong> Irrenunciables (autoría,
+                integridad).
+              </li>
+              <li>
+                <strong>Derechos Patrimoniales:</strong> Explotación económica
+                (reproducción, distribución).
+              </li>
+            </ul>
+
+            <h4>Impacto de la Inteligencia Artificial</h4>
+            <ul>
+              <li>
+                <strong>Requisito legal:</strong> El autor debe ser una persona
+                física.
+              </li>
+              <li>
+                <strong>Obras generadas por IA:</strong> No protegidas sin
+                intervención humana creativa.
+              </li>
+              <li>
+                <strong>Uso del Input:</strong> La minería de datos para
+                entrenamiento está regulada.
+              </li>
+            </ul>
+
+            <h4>Tipos de Licencias</h4>
+            <div class="highlight-box">
+              <p>
+                <strong>Copyright (©):</strong> Todos los derechos reservados.
+              </p>
+            </div>
+            <div class="highlight-box">
+              <p>
+                <strong>Copyleft (🄯):</strong> Permite libre distribución y
+                modificación bajo la misma licencia.
+              </p>
+            </div>
+            <div class="highlight-box">
+              <p>
+                <strong>Creative Commons (CC):</strong> Licencias modulares para
+                ceder algunos derechos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAGERIT Card -->
+        <div class="card magerit">
+          <div class="card-header">
+            <span class="card-icon">🛡️</span>
+            <div>
+              <h3>MAGERIT v3</h3>
+              <p class="summary">
+                Metodología del CCN para el análisis y gestión de riesgos de
+                seguridad.
+              </p>
+            </div>
+          </div>
+          <button class="toggle-btn" onclick="toggleContent(this)">
+            Ver más
+          </button>
+          <div class="card-content">
+            <h4>Definición y Objetivos</h4>
+            <p>
+              Método formal del Centro Criptológico Nacional (CCN) para
+              gestionar la seguridad de Sistemas de Información.
+            </p>
+            <ul>
+              <li>Investigar y analizar riesgos.</li>
+              <li>Recomendar salvaguardas adecuadas.</li>
+              <li>Cumplir con el Esquema Nacional de Seguridad (ENS).</li>
+            </ul>
+
+            <h4>Fases del Análisis</h4>
+            <ol>
+              <li><strong>Planificación:</strong> Definir alcance y equipo.</li>
+              <li>
+                <strong>Análisis de Riesgos:</strong> Identificar y valorar
+                activos, amenazas y vulnerabilidades.
+              </li>
+              <li>
+                <strong>Gestión de Riesgos:</strong> Seleccionar salvaguardas y
+                calcular el riesgo residual.
+              </li>
+              <li><strong>Seguimiento:</strong> Monitorizar y revisar.</li>
+            </ol>
+
+            <div class="highlight-box">
+              <p><strong>Ejemplo: Ransomware</strong></p>
+              <p>
+                <strong>Activo:</strong> Base de datos.
+                <strong>Amenaza:</strong> Ransomware. <strong>Riesgo:</strong> Alto.
+                <strong>Salvaguarda:</strong> Copias inmutables.
+                <strong>Riesgo Residual:</strong> Bajo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p><strong>SMR2 - Seguridad Informática</strong></p>
+        <p>Esteban, Marqués, Ricardo, Kevin, Aitor</p>
+      </div>
+    </footer>
+
+    <script>
+      function toggleContent(button) {
+        const content = button.nextElementSibling;
+        const card = button.closest(".card");
+
+        if (content.classList.contains("active")) {
+          content.classList.remove("active");
+          button.textContent = "Ver más";
+        } else {
+          // Close other cards if you want only one open at a time
+          // document.querySelectorAll('.card-content.active').forEach(c => {
+          //   c.classList.remove('active');
+          //   c.previousElementSibling.textContent = 'Ver más';
+          // });
+          content.classList.add("active");
+          button.textContent = "Ver menos";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".card");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        cards.forEach((card) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(30px)";
+          card.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+          observer.observe(card);
+        });
+      });
+    </script>
+  </body>
+</html>
