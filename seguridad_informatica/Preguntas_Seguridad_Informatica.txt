@@ -1,0 +1,16 @@
+5 - Preguntas - Seguridad Informativas
+
+1. Que es una auditoria?
+    1. Una auditoria es lo que hacen las empresas en un entorno controlado para probar sus defensas en sus sistemas
+2. Que tipos de hackers hay?
+    1. Existen 6 tipos de hacker (sombrero blando, gris, negro, rojo, verde, azul)
+3. Que tres grupos de hackers existen y ha que se dedican?
+    1. Existen 3 y son: team red (se enfocan en el ataque a empresas de todo tipo), team blue (se enfocan en la defensa de una empresa), team purpure (se enfocan en las anteriores dos, tanto defensa como ataque, es un equilibrio)
+4. Tipos de ataques existen?
+    1. Malware
+    2. Phishing
+    3. DDoS
+    4. Fuerza bruta
+    5. Inyección SQL
+5. Como funciona un ataque DDoS (Denegación de servicios) ?
+    1. Un ataque DDoS también conocido como ataque de Denegación de servicios funciona enviando miles y miles de consulta al servidor víctima y así causarle un estrés enorme al punto de poder colapsar.
