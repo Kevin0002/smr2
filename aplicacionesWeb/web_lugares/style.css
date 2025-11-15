@@ -1,120 +1,168 @@
+/* Reset y estilos base */
 * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      body {
-        font-family: Georgia, serif;
-        background-color: #f5f5f5;
-      }
+body {
+  font-family: Georgia, serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-      header {
-        background-color: #666;
-        color: white;
-        padding: 20px;
-        text-align: center;
-      }
+/* Header */
+header {
+  background-color: #666;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
 
-      .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
-        gap: 15px;
-        padding: 15px;
-        max-width: 1400px;
-        margin: 0 auto;
-      }
+header h1 {
+  font-size: 2em;
+  font-weight: normal;
+}
 
-      .box {
-        background-color: #d3d3d3;
-        padding: 20px;
-        border-radius: 5px;
-        min-height: 300px;
-      }
+/* Contenedor principal con Grid */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  padding: 15px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  flex: 1;
+}
 
-      .box-links {
-        grid-column: 1;
-        grid-row: 1;
-      }
+/* Grid responsive para pantallas grandes */
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: 250px 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas:
+      "links info info"
+      "links datos historia"
+      "links curiosidades imagen";
+    min-height: 600px;
+  }
+}
 
-      .box-info {
-        grid-column: 2;
-        grid-row: 1;
-        background-color: #e8e8e8;
-      }
+/* Estilos base para todas las cajas */
+.box {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 200px;
+  overflow: hidden;
+}
 
-      .box-datos {
-        grid-column: 3;
-        grid-row: 1;
-      }
+/* Caja de enlaces */
+.box-links {
+  grid-area: links;
+}
 
-      .box-historia {
-        grid-column: 1;
-        grid-row: 2;
-      }
+.box-links h3 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.2em;
+}
 
-      .box-curiosidades {
-        grid-column: 2;
-        grid-row: 2;
-        background-color: #e8e8e8;
-      }
+.box-links ul {
+  list-style: none;
+}
 
-      .box-imagen {
-        grid-column: 3;
-        grid-row: 2;
-      }
+.box-links li {
+  margin-bottom: 10px;
+}
 
-      .box h2,
-      .box h3 {
-        margin-bottom: 15px;
-      }
+.box-links a {
+  color: #666;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 1.05em;
+}
 
-      .box ul {
-        list-style: none;
-        padding-left: 20px;
-      }
+.box-links a:hover {
+  background-color: #f0f0f0;
+  color: #333;
+  transform: translateX(5px);
+}
 
-      .box ul li {
-        margin: 8px 0;
-      }
+/* Áreas del Grid */
+.box-info {
+  grid-area: info;
+}
 
-      .box a {
-        color: #0066cc;
-        text-decoration: underline;
-        cursor: pointer;
-      }
+.box-datos {
+  grid-area: datos;
+}
 
-      .box a:hover {
-        color: #004499;
-      }
+.box-historia {
+  grid-area: historia;
+}
 
-      iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        min-height: 250px;
-      }
+.box-curiosidades {
+  grid-area: curiosidades;
+}
 
-      footer {
-        background-color: #666;
-        color: white;
-        padding: 15px;
-        text-align: center;
-        margin-top: 15px;
-      }
+.box-imagen {
+  grid-area: imagen;
+}
 
-      .iframe-container {
-        width: 100%;
-        height: 100%;
-        min-height: 250px;
-      }
+/* iFrames */
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  min-height: 250px;
+  border-radius: 4px;
+}
 
-      .initial-message {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        color: #666;
-        font-style: italic;
-      }
+/* Mensaje inicial */
+.initial-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 150px;
+  color: #999;
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* Footer */
+footer {
+  background-color: #666;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-top: auto;
+}
+
+footer p {
+  font-size: 0.95em;
+}
+
+/* Responsive para tablets */
+@media (max-width: 600px) {
+  .box {
+    min-height: 150px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .box-links h3 {
+    font-size: 1.1em;
+  }
+}

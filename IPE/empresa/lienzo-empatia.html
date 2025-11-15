@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lienzo de Empatía para Dueños de PYME - Análisis</title>
+    <!-- Carga de Tailwind CSS para un diseño profesional y responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f0f4f8; /* Fondo suave y uniforme, ligeramente más azulado */
+      }
+      .empathy-card {
+        min-height: 280px; /* Mayor altura para mejor presentación */
+        display: flex;
+        flex-direction: column;
+        padding: 1.75rem;
+        border-radius: 16px; /* Más redondeado */
+        transition: all 0.3s ease;
+        background-color: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra inicial suave */
+      }
+      .empathy-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Sombra más fuerte al pasar el ratón */
+      }
+
+      /* Estilo unificado de la lista (acento azul corporativo) */
+      .list-item {
+        border-left: 5px solid #3b82f6; /* Azul Corporativo más ancho */
+        padding-left: 1rem;
+        margin-top: 0.75rem;
+        line-height: 1.4;
+      }
+
+      /* Estilos específicos para Esfuerzos y Resultados */
+      .effort-card {
+        background-color: #fef2f2; /* Rojo muy sutil para Esfuerzos */
+        border: 1px solid #fca5a5;
+      }
+      .gain-card {
+        background-color: #ecfdf5; /* Verde muy sutil para Resultados */
+        border: 1px solid #6ee7b7;
+      }
+
+      .center-persona {
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "bas-blue": "#1E3A8A", // Azul oscuro (títulos)
+              "bas-accent": "#3B82F6", // Azul para acentos (listas y encabezados)
+              "bas-dark": "#0F172A", // Texto principal oscuro
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="p-4 sm:p-10">
+    <header class="mb-12 text-center">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-bas-blue mb-2">
+        Lienzo de Empatía del Dueño de PYME
+      </h1>
+      <p class="text-xl text-gray-600">
+        Comprendiendo al Decisor Cauteloso de Soluciones de IA
+      </p>
+    </header>
+
+    <!-- Contenedor principal del Lienzo -->
+    <div class="space-y-12">
+      <!-- LIENZO ÚNICO: PROFESIONAL (Armonía de Color) -->
+      <section
+        id="professional-variant"
+        class="p-10 bg-white shadow-2xl rounded-2xl"
+      >
+        <h2
+          class="text-3xl font-bold text-bas-dark mb-8 border-b-2 border-bas-accent pb-3"
+        >
+          El Dueño Cauteloso de PYME
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- 1. ¿Qué piensa y siente? (Arriba izquierda) -->
+          <div class="empathy-card">
+            <h3
+              class="text-xl font-bold text-bas-accent mb-4 flex items-center"
+            >
+              💭 PIENSA Y SIENTE
+            </h3>
+            <ul class="list-disc space-y-3 text-sm text-bas-dark">
+              <li class="list-none list-item">
+                Necesito eficiencia y automatización ahora para seguir siendo
+                competitivo.
+              </li>
+              <li class="list-none list-item">
+                Hay frustración por el tiempo perdido en tareas repetitivas y
+                manuales.
+              </li>
+              <li class="list-none list-item">
+                Siente que la IA es inaccesible o demasiado compleja para una
+                PYME.
+              </li>
+            </ul>
+          </div>
+
+          <!-- 2. ¿Qué ve? (Arriba centro) -->
+          <div class="empathy-card">
+            <h3
+              class="text-xl font-bold text-bas-accent mb-4 flex items-center"
+            >
+              👀 VE
+            </h3>
+            <ul class="list-disc space-y-3 text-sm text-bas-dark">
+              <li class="list-none list-item">
+                Su competencia (o grandes empresas) adoptando IA y mejorando
+                procesos.
+              </li>
+              <li class="list-none list-item">
+                Cuellos de botella y procesos ineficientes dentro de su propia
+                operación.
+              </li>
+              <li class="list-none list-item">
+                Mucha publicidad de soluciones cloud costosas y basadas en
+                suscripciones.
+              </li>
+            </ul>
+          </div>
+
+          <!-- 3. ¿Qué dice y hace? (Arriba derecha) -->
+          <div class="empathy-card">
+            <h3
+              class="text-xl font-bold text-bas-accent mb-4 flex items-center"
+            >
+              🗣️ DICE Y HACE
+            </h3>
+            <ul class="list-disc space-y-3 text-sm text-bas-dark">
+              <li class="list-none list-item">
+                Expresa su preocupación por la «seguridad» y «privacidad» de los
+                datos en reuniones.
+              </li>
+              <li class="list-none list-item">
+                Busca activamente opciones de «pago único» o modelos de costes
+                fijos.
+              </li>
+              <li class="list-none list-item">
+                Evita o rechaza propuestas que impliquen el envío de datos
+                sensibles fuera de la empresa.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Centro de la Persona -->
+          <div
+            class="md:col-span-3 center-persona bg-bas-blue rounded-lg shadow-xl mt-4 p-6 border-b-4 border-bas-accent text-white"
+          >
+            <div class="text-center">
+              <span class="text-6xl mb-2">💼</span>
+              <!-- Ícono de maletín para Decisor de Negocios -->
+              <h4 class="text-3xl font-extrabold">PERSONA CENTRAL</h4>
+              <p class="text-xl font-medium">
+                El Dueño Cauteloso y Buscador de Control
+              </p>
+              <p class="text-sm text-blue-200 mt-2">
+                Quiere modernizar su negocio sin asumir riesgos de datos ni
+                costes descontrolados.
+              </p>
+            </div>
+          </div>
+
+          <!-- 4. ¿Qué oye? (Abajo izquierda) -->
+          <div class="empathy-card text-center">
+            <!-- Títulos más pequeños y centrados -->
+            <h3
+              class="text-lg font-bold text-bas-accent mb-4 flex items-center justify-center"
+            >
+              👂 QUÉ OYE
+            </h3>
+            <ul class="list-disc space-y-3 text-sm text-bas-dark text-left">
+              <li class="list-none list-item">
+                De su equipo: Quejas sobre la carga de trabajo manual y tareas
+                tediosas.
+              </li>
+              <li class="list-none list-item">
+                Del mercado: Advertencias sobre fugas de datos y altos costes de
+                servicios IA en la nube.
+              </li>
+              <li class="list-none list-item">
+                De los proveedores: "IA privada, ejecución local y coste
+                controlado."
+              </li>
+            </ul>
+          </div>
+
+          <!-- 5. Esfuerzos (Dolores/Pains) (Abajo centro) -->
+          <div class="empathy-card effort-card text-center">
+            <!-- Títulos más pequeños y centrados -->
+            <h3
+              class="text-lg font-bold text-red-700 mb-4 flex items-center justify-center"
+            >
+              🛑 ESFUERZOS (FRUSTRACIONES)
+            </h3>
+            <ul
+              class="list-disc space-y-3 text-sm text-gray-900 font-semibold text-left"
+            >
+              <li class="list-none list-item">
+                Miedo a la «dependencia» y a los «costes recurrentes»
+                impredecibles de la nube.
+              </li>
+              <li class="list-none list-item">
+                Riesgo de pérdida de «privacidad» y «soberanía de los datos» al
+                usar APIs externas.
+              </li>
+              <li class="list-none list-item">
+                Falta de personal técnico interno para integrar soluciones
+                complejas.
+              </li>
+            </ul>
+          </div>
+
+          <!-- 6. Resultados Deseados (Ganancias/Gains) (Abajo derecha) -->
+          <div class="empathy-card gain-card text-center">
+            <!-- Títulos más pequeños y centrados -->
+            <h3
+              class="text-lg font-bold text-green-700 mb-4 flex items-center justify-center"
+            >
+              ✅ RESULTADOS (GANANCIAS)
+            </h3>
+            <ul
+              class="list-disc space-y-3 text-sm text-gray-900 font-semibold text-left"
+            >
+              <li class="list-none list-item">
+                IA 100% «privada y segura» (los datos permanecen dentro de su
+                red).
+              </li>
+              <li class="list-none list-item">
+                «Aumento comprobado de productividad» al automatizar tareas
+                clave (documentos, correos).
+              </li>
+              <li class="list-none list-item">
+                Modelo de «pago único» por hardware más soporte económico y
+                predecible.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

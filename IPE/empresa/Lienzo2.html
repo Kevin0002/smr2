@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IA Local para PYMES</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Configuración personalizada de Tailwind para colores de la Paleta Elegante -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "blue-principal": "#0A3D62", // Azul Principal (Deep Blue, más suave)
+              "cream-bg": "#F8F8F8", // Blanco Cremoso para fondo
+              "gold-accent": "#FF8C00", // Dorado/Naranja Sutil para acentos
+              "grey-soft": "#EEEEEE", // Gris muy suave
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"], // Usamos Inter como base
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Enlace a la fuente Inter de Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Estilos específicos para un contenedor de presentación elegante (16:9 ratio aproximado en desktop) */
+      .presentation-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Estilo para el degradado del encabezado */
+      .header-gradient {
+        background: linear-gradient(135deg, #0a3d62 0%, #1565c0 100%);
+      }
+
+      /* Sombra sutil para las tarjetas flotantes */
+      .card-shadow {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .card-shadow:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      }
+    </style>
+  </head>
+  <body class="bg-cream-bg font-sans presentation-container">
+    <!-- A. Título Principal (Header Elegante con Degradado) -->
+    <header
+      class="header-gradient text-white py-12 md:py-16 px-6 sm:px-10 rounded-b-xl"
+    >
+      <div class="max-w-6xl mx-auto">
+        <!-- Referencia de empresa genérica eliminada -->
+        <p
+          class="text-sm font-semibold opacity-80 mb-2 tracking-widest uppercase"
+        >
+          TECNOLOGÍA DE VANGUARDIA | SOLUCIÓN PRIVADA
+        </p>
+        <h1
+          class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight"
+        >
+          INTELIGENCIA ARTIFICIAL PRIVADA PARA PYMES
+        </h1>
+      </div>
+    </header>
+
+    <main class="flex-grow max-w-6xl mx-auto px-6 sm:px-10 py-10 w-full">
+      <!-- B. Subtítulo/Propuesta de Valor -->
+      <section class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-principal mb-4">
+          La solución segura, eficiente y económicamente inteligente para el
+          futuro de tu negocio.
+        </h2>
+        <div class="h-1 w-24 bg-gold-accent mx-auto rounded-full"></div>
+      </section>
+
+      <!-- C. Puntos Focales (3 Columnas con Tarjetas Flotantes) -->
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <!-- Tarjeta 1: Privacidad -->
+        <div
+          class="bg-white p-6 md:p-8 rounded-xl card-shadow flex flex-col items-start"
+        >
+          <div class="p-3 mb-4 rounded-full bg-blue-principal/10">
+            <i data-lucide="shield-check" class="w-6 h-6 text-gold-accent"></i>
+          </div>
+          <h3 class="text-xl font-extrabold text-blue-principal mb-2">
+            1. MÁXIMA PRIVACIDAD
+          </h3>
+          <p class="text-gray-600 text-base">
+            Los datos sensibles permanecen en tu infraestructura local, sin
+            salir jamás a la nube ni a terceros. Seguridad y control total.
+          </p>
+        </div>
+
+        <!-- Tarjeta 2: Eficiencia -->
+        <div
+          class="bg-white p-6 md:p-8 rounded-xl card-shadow flex flex-col items-start"
+        >
+          <div class="p-3 mb-4 rounded-full bg-blue-principal/10">
+            <i data-lucide="zap" class="w-6 h-6 text-gold-accent"></i>
+          </div>
+          <h3 class="text-xl font-extrabold text-blue-principal mb-2">
+            2. EFICIENCIA SUPERIOR
+          </h3>
+          <p class="text-gray-600 text-base">
+            Velocidad de respuesta local e inmediata. Automatización de tareas
+            clave y flujos de trabajo sin demoras por conexión.
+          </p>
+        </div>
+
+        <!-- Tarjeta 3: Inversión -->
+        <div
+          class="bg-white p-6 md:p-8 rounded-xl card-shadow flex flex-col items-start"
+        >
+          <div class="p-3 mb-4 rounded-full bg-blue-principal/10">
+            <i data-lucide="piggy-bank" class="w-6 h-6 text-gold-accent"></i>
+          </div>
+          <h3 class="text-xl font-extrabold text-blue-principal mb-2">
+            3. INVERSIÓN ACCESIBLE
+          </h3>
+          <p class="text-gray-600 text-base">
+            Estructura de pago único por el rack, eliminando los altos costes
+            mensuales recurrentes de los servicios en la nube.
+          </p>
+        </div>
+      </section>
+
+      <!-- D. Bloque de Servicio (Confianza y Soporte) -->
+      <section class="bg-grey-soft p-6 md:p-8 rounded-xl mb-10 text-center">
+        <h4
+          class="text-lg font-bold text-blue-principal mb-4 uppercase tracking-wider"
+        >
+          Implementación Garantizada
+        </h4>
+        <div
+          class="flex flex-wrap justify-center gap-4 text-sm md:text-base text-gray-700"
+        >
+          <span class="flex items-center space-x-2">
+            <i data-lucide="wrench" class="w-4 h-4 text-blue-principal"></i>
+            <span>Instalación Profesional</span>
+          </span>
+          <span class="flex items-center space-x-2">
+            <i data-lucide="settings" class="w-4 h-4 text-blue-principal"></i>
+            <span>Configuración de Flujos</span>
+          </span>
+          <span class="flex items-center space-x-2">
+            <i
+              data-lucide="book-open-text"
+              class="w-4 h-4 text-blue-principal"
+            ></i>
+            <span>Formación Esencial</span>
+          </span>
+          <span class="flex items-center space-x-2">
+            <i data-lucide="life-buoy" class="w-4 h-4 text-blue-principal"></i>
+            <span>Soporte Técnico Continuo</span>
+          </span>
+        </div>
+      </section>
+
+      <!-- E. Llamada a la Acción (CTA) -->
+      <section class="text-center">
+        <a
+          href="#"
+          class="inline-block py-3 px-10 bg-blue-principal text-white font-extrabold rounded-full text-lg hover:bg-gold-accent transition-colors duration-300 transform hover:scale-105 shadow-lg"
+        >
+          AGENDA TU DEMOSTRACIÓN HOY
+        </a>
+      </section>
+    </main>
+
+    <!-- Footer para contexto corporativo (Genérico) -->
+    <footer
+      class="mt-auto py-4 bg-blue-principal/5 text-center text-xs text-gray-500"
+    >
+      El futuro de la eficiencia comienza con el control total de tus datos.
+    </footer>
+
+    <!-- Inicializa los iconos de Lucide -->
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

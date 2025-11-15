@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cities</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Georgia, serif;
+      }
+
+      header {
+        background-color: #666;
+        color: white;
+        text-align: center;
+        padding: 30px;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+
+      .city-box {
+        background-color: #d3d3d3;
+        padding: 20px;
+        min-height: 300px;
+      }
+
+      .city-box h2 {
+        margin-bottom: 15px;
+        font-size: 22px;
+      }
+
+      .city-box ul {
+        list-style-position: inside;
+      }
+
+      .city-box ul li {
+        margin-bottom: 5px;
+      }
+
+      .city-box a {
+        color: #0066cc;
+        text-decoration: underline;
+      }
+
+      .selected-city {
+        background-color: #e8e8e8;
+      }
+
+      .selected-city h3 {
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+
+      .selected-city iframe {
+        width: 100%;
+        height: 250px;
+        border: 1px solid #999;
+        background-color: white;
+      }
+
+      .form-box {
+        background-color: #d3d3d3;
+      }
+
+      .form-box label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .form-box input[type="text"],
+      .form-box input[type="email"],
+      .form-box textarea {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #999;
+      }
+
+      .form-box textarea {
+        height: 80px;
+        resize: vertical;
+      }
+
+      .form-box button {
+        padding: 5px 15px;
+        background-color: white;
+        border: 1px solid #999;
+        cursor: pointer;
+      }
+
+      .table-box table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+      }
+
+      .table-box th,
+      .table-box td {
+        border: 1px solid #666;
+        padding: 8px;
+        text-align: left;
+      }
+
+      .table-box th {
+        background-color: #999;
+        font-weight: bold;
+      }
+
+      .table-box h3 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+
+      .info-box img {
+        width: 100%;
+        height: auto;
+        margin-top: 15px;
+      }
+
+      .info-box p {
+        line-height: 1.6;
+      }
+
+      footer {
+        background-color: #666;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      /* Hide all iframes by default */
+      .wiki-iframe {
+        display: none;
+        width: 100%;
+        height: 250px;
+        border: 1px solid #999;
+        background-color: white;
+      }
+
+      /* Show iframe when corresponding hash is active */
+      #london-wiki:target,
+      #paris-wiki:target,
+      #tokyo-wiki:target {
+        display: block;
+      }
+
+      @media (max-width: 1024px) {
+        section {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        section {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Cities</h1>
+    </header>
+
+    <section>
+      <!-- Cities List -->
+      <div class="city-box">
+        <ul>
+          <li><a href="#london-wiki">London</a></li>
+          <li><a href="#paris-wiki">Paris</a></li>
+          <li><a href="#tokyo-wiki">Tokyo</a></li>
+        </ul>
+      </div>
+
+      <!-- Selected City with Wikipedia -->
+      <div class="city-box selected-city">
+        <h3>Ciudad seleccionada</h3>
+        <iframe
+          id="london-wiki"
+          class="wiki-iframe"
+          src="https://es.wikipedia.org/wiki/Londres"
+        ></iframe>
+        <iframe
+          id="paris-wiki"
+          class="wiki-iframe"
+          src="https://es.wikipedia.org/wiki/París"
+        ></iframe>
+        <iframe
+          id="tokyo-wiki"
+          class="wiki-iframe"
+          src="https://es.wikipedia.org/wiki/Tokio"
+        ></iframe>
+      </div>
+
+      <!-- New York Form -->
+      <div class="city-box form-box">
+        <h2>New York</h2>
+        <form>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" />
+
+          <label for="correo">Correo:</label>
+          <input type="email" id="correo" name="correo" />
+
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje"></textarea>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+
+      <!-- Madrid Table -->
+      <div class="city-box table-box">
+        <h2>Madrid</h2>
+        <h3>Ciudades Europeas</h3>
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">Ciudad</th>
+              <th colspan="2">Datos</th>
+            </tr>
+            <tr>
+              <th>País</th>
+              <th>Población (millones)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Madrid</td>
+              <td>España</td>
+              <td>3.3</td>
+            </tr>
+            <tr>
+              <td>Paris</td>
+              <td>Francia</td>
+              <td>2.1</td>
+            </tr>
+            <tr>
+              <td>Berlin</td>
+              <td>Alemania</td>
+              <td>3.6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Berlin y Canadá -->
+      <div class="city-box info-box">
+        <h2>Berlin y Canadá</h2>
+        <p>
+          Berlin es conocida por su historia y
+          <strong>arquitectura moderna</strong>. Canadá destaca por su
+          naturaleza y diversidad cultural.
+        </p>
+      </div>
+
+      <!-- Berlin Image -->
+      <div class="city-box info-box">
+        <img
+          src="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800"
+          alt="Berlin cityscape"
+        />
+      </div>
+    </section>
+
+    <footer>
+      <p>Footer</p>
+    </footer>
+  </body>
+</html>
